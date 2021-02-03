@@ -51,15 +51,14 @@ def name_count(anno):
     return count_dict
 count_draft = name_count(AnnoResult) # 要素统计结果（键名为数字编号）
 
-# 键名（数字编号）转中文
 keykey = dict1.keys()
 count_final = {} # 最终统计结果
 for key in count_draft:
     if key in keykey:
         new = dict1[key] # 数字对应的中文
-        count_final[new] = count_draft[key] # 中文替换数字键（key）
+        count_final[new] = count_draft[key] # 键名（数字编号）转中文
 
-# 统计未出现的键名并转中文
+# 统计未出现的要素
 NeverAppear = []
 for key in keykey:
     if key in count_draft:
